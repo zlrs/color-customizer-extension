@@ -1,5 +1,6 @@
 // This is a background script. 
-// Essentially this is a service worker.
+// It runs in the background!
+// Essentially, it is a service worker, in newest standard (manifest V3)
 // Colors: http://zhongguose.com
 
 function setBackgroundColor(r, g, b) {
@@ -8,11 +9,19 @@ function setBackgroundColor(r, g, b) {
   document.body.style.backgroundColor = colorStyle;
 }
 
-chrome.action.onClicked.addListener((tab) => {
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setBackgroundColor,
-    args: [237,85,106] // 苋菜红
-  });
-});
-
+// Change color of active tab on message
+chrome.runtime.onMessage.addListener(async function(message, sender, sendResponse) {
+    let {r, g, b} = message;
+    if (typeof(r) === 'number' &&
+        typeof(g) === 'number' &&
+        typeof(b) === 'number') {
+      let tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+      let activeTab = tabs[0];
+      chrome.scripting.executeScript({
+        target: { tabId: activeTab.id },
+        function: setBackgroundColor,
+        args: [r, g, b]
+      });
+    }
+  }
+);

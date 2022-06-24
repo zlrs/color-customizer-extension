@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>My Test Extension Options</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="pop.css">
+  <title>Change background color</title>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="popup.css">
 </head>
+
 <body>
-    <section class="alert alert-warning" role="alert">
-        Please enter background color in RGB and click "Save":
-    </section>
-  
-    <section>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">R</span>
-            <input type="text" id="id_rgb_r" class="form-control" placeholder="Red" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">G</span>
-            <input type="text" id="id_rgb_g" class="form-control" placeholder="Green" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">B</span>
-            <input type="text" id="id_rgb_b" class="form-control" placeholder="Blue" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="d-grid gap-2">
-            <button type="button" id="save_btn" class="btn btn-primary">Save</button>
-        </div>
+  <section class="alert alert-warning" role="alert">
+    Please enter color in RGB(0~255) and click "Save" Button
+  </section>
+
+  <section>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">R</span>
+      <input type="text" id="id_rgb_r" class="form-control" placeholder="Red value, 0~255" aria-label="Username"
+        aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">G</span>
+      <input type="text" id="id_rgb_g" class="form-control" placeholder="Green value, 0~255" aria-label="Username"
+        aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">B</span>
+      <input type="text" id="id_rgb_b" class="form-control" placeholder="Blue value, 0~255" aria-label="Username"
+        aria-describedby="basic-addon1">
+    </div>
+    <div class="d-grid gap-2">
+      <button type="button" id="save_btn" class="btn btn-primary">Save</button>
+    </div>
   </section>
 
   <script src="popup.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="bootstrap/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
